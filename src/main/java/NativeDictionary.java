@@ -26,7 +26,7 @@ class NativeDictionary<T>
     public boolean isKey(String key)
     {
         int idx = hashFun(key);
-        return slots[idx] != null;
+        return key.equals(slots[idx]);
         // возвращает true если ключ имеется,
         // иначе false
     }
@@ -43,7 +43,7 @@ class NativeDictionary<T>
     public T get(String key)
     {
         int idx = hashFun(key);
-        if (slots[idx] != null) {
+        if (key.equals(slots[idx])) {
             return values[idx];
         }
         return null;

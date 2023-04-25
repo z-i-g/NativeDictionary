@@ -6,7 +6,6 @@ class NativeDictionaryTest {
     NativeDictionary<Integer> dictionary = new NativeDictionary<>(17, Integer.class);
     String key1 = "key1";
     String key2 = "key2";
-    String key3 = "key3";
 
     @Test
     public void put_whenNewKey() {
@@ -31,10 +30,12 @@ class NativeDictionaryTest {
 
     @Test
     public void isKey_whenExistingKey() {
+        String key3 = new String("key1");
         dictionary.put(key1, 1);
         dictionary.put(key2, 2);
         assertTrue(dictionary.isKey(key1));
         assertTrue(dictionary.isKey(key2));
+        assertTrue(dictionary.isKey(key3));
     }
 
     @Test
